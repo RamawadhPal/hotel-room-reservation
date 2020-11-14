@@ -28,7 +28,6 @@ public class ReservationService {
     public List<RoomReservation> getRoomReservationForDate(Date date) {
         Iterable<Room> rooms = this.roomRepository.findAll();
         Map<Long, RoomReservation> roomReservationMap = new HashMap<>();
-        // Create Room reservation Object and fill it with all the rooms
         rooms.forEach(room -> {
             RoomReservation roomReservation = new RoomReservation();
             roomReservation.setRoomId(room.getRoomId());
